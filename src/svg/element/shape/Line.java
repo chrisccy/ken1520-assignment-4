@@ -1,6 +1,7 @@
 package svg.element.shape;
 
 import svg.SVGParser;
+import svg.element.Element;
 
 public class Line extends Shape{
 
@@ -10,7 +11,7 @@ public class Line extends Shape{
 
     public Line()
     {
-        super(label);
+        super("Line");
     }
 
     @Override
@@ -59,5 +60,9 @@ public class Line extends Shape{
 
         return true;
 
+    }
+    public Element newInstance(){
+        Line newLine = new Line();
+        return newLine;
     }
 }
