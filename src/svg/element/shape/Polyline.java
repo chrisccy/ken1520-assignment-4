@@ -22,7 +22,7 @@ public class Polyline extends Shape {
         try
         {
             // We first extract the path data string
-            int dataLocation = expr.indexOf("points=") + 2;
+            int dataLocation = expr.indexOf("points=") + 7;
             String dataString = SVGParser.extractStringAt(expr, dataLocation);
 
             String[] strings = dataString.split(" ");
@@ -35,6 +35,7 @@ public class Polyline extends Shape {
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             return false;
         }
     }
@@ -42,5 +43,14 @@ public class Polyline extends Shape {
     public Element newInstance(){
         Polyline newPolyline = new Polyline();
         return newPolyline;
+    }
+
+    @Override
+    public String toString() {
+        String out = label() + ": ";
+        for (Point2D point : points) {
+            out += String.format("(%.1f,%.1f) ", point.x, point.y);
+        }
+        return out;
     }
 }

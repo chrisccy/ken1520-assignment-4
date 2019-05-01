@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Polygon extends Polyline {
-    List<Point2D> points = new ArrayList<Point2D>();
     double x;
 
     public Polygon() {
@@ -19,7 +18,7 @@ public class Polygon extends Polyline {
         try
         {
             // We first extract the path data string
-            int dataLocation = expr.indexOf("points=") + 2;
+            int dataLocation = expr.indexOf("points=") + 7;
             String dataString = SVGParser.extractStringAt(expr, dataLocation);
 
             String[] strings = dataString.split(" ");

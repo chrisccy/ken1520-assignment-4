@@ -53,7 +53,7 @@ public class Path extends Shape {
 
     @Override
     public String toString() {
-        String out = "";
+        String out = "path: ";
         for (PathOp op : operations) {
             out += op.toString() + " ";
         }

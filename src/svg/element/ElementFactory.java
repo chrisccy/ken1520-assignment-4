@@ -11,8 +11,9 @@ public class ElementFactory {
         prototypes.add(new Circle());
         prototypes.add(new Ellipse());
         prototypes.add(new Rectangle());
-        prototypes.add(new Line());
         prototypes.add(new Polyline());
+        prototypes.add(new Line());
+        prototypes.add(new Polygon());
         prototypes.add(new Path());
     }
 
@@ -22,7 +23,6 @@ public class ElementFactory {
         for (Element prototype : prototypes()) {
             if (expr.contains(prototype.label())) {
                 Element out = prototype.newInstance();
-                out.load(expr);
                 return out;
             }
         }
