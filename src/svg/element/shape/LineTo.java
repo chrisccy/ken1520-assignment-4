@@ -19,4 +19,9 @@ public class LineTo extends PathOp {
         x = scanner.nextInt(); y = scanner.nextInt();
         return true;
     }
+
+    @Override
+    protected String parameterString() {
+        return String.format("x=%.1f, y=%.1f", x, y);
+    }
 }

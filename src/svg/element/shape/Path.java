@@ -3,10 +3,15 @@ package svg.element.shape;
 import svg.SVGParser;
 import svg.element.Element;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Path extends Shape {
+
+    private List<PathOp> operations;
+
     public Path() {
         super("path");
     }
@@ -18,6 +23,7 @@ public class Path extends Shape {
 
     @Override
     public boolean load(String expr) {
+        operations = new ArrayList<>();
         try
         {
             // We first extract the path data string
@@ -33,13 +39,24 @@ public class Path extends Shape {
 
             while (match.find()) {
                 String opString = match.group();
-                System.out.println(opString);
+                PathOp newOp = PathOp.makeOp(opString);
+                operations.add(newOp);
             }
             return true;
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public String toString() {
+        String out = "";
+        for (PathOp op : operations) {
+            out += op.toString() + " ";
+        }
+        return out;
     }
 }
