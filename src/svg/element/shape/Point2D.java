@@ -1,6 +1,7 @@
 package svg.element.shape;
 
 import svg.SVGParser;
+import svg.element.Element;
 
 public class Point2D extends Polyline {
     public double x;

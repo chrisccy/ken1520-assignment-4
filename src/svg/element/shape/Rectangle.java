@@ -1,6 +1,7 @@
 package svg.element.shape;
 
 import svg.SVGParser;
+import svg.element.Element;
 
 public class Rectangle extends Shape{
 
@@ -69,6 +70,11 @@ public class Rectangle extends Shape{
         }
 
         return true;
+    }
+
+    public Element newInstance(){
+        Rectangle newrectangle = new Rectangle();
+        return newrectangle;
     }
 
 }

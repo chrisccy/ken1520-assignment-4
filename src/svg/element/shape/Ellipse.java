@@ -1,5 +1,6 @@
 package svg.element.shape;
 import svg.SVGParser;
+import svg.element.Element;
 
 public class Ellipse extends Shape{
 
@@ -52,6 +53,11 @@ public class Ellipse extends Shape{
         }
 
         return true;
+    }
+
+    public Element newInstance(){
+        Ellipse newEllipse = new Ellipse();
+        return newEllipse;
     }
 
 }

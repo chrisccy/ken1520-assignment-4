@@ -14,4 +14,6 @@ public class ElementFactory {
         prototypes.add(new Polyline());
         prototypes.add(new Rectangle());
     }
+
+
 }

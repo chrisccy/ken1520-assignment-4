@@ -2,6 +2,8 @@ package svg.element.shape;
 
 import svg.SVGParser;
 
+import svg.element.Element;
+
 public class Circle extends Shape {
 
     double cx;
@@ -44,5 +46,11 @@ public class Circle extends Shape {
         }
 
         return true;
+    }
+
+    @Override
+    public Element newInstance(){
+        Circle newcircle = new Circle();
+        return newcircle;
     }
 }
