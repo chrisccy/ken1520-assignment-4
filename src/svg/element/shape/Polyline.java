@@ -19,7 +19,6 @@ public class Polyline extends Shape {
     public boolean load(String expr) {
         try
         {
-
             // We first extract the path data string
             int dataLocation = expr.indexOf("points=") + 2;
             String dataString = SVGParser.extractStringAt(expr, dataLocation);
@@ -27,7 +26,7 @@ public class Polyline extends Shape {
             String[] strings = dataString.split(" ");
 
             for(int i=0; i<strings.length; i = i+2){
-                points.add(new Point(Double.parseDouble(strings[i]), Double.parseDouble(strings[i+1])));
+                points.add(new Point2D(Double.parseDouble(strings[i]), Double.parseDouble(strings[i+1])));
             }
 
             return true;
