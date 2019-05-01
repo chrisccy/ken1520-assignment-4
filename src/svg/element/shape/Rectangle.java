@@ -8,7 +8,7 @@ public class Rectangle extends Shape{
     private double x, y, rx, ry, width, length;
 
     public Rectangle(){
-        super("rectangle");
+        super("rect");
     }
 
     @Override

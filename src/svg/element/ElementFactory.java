@@ -5,14 +5,28 @@ import java.util.*;
 
 public class ElementFactory {
 
-    List<Element> prototypes = new ArrayList<>();
+    private List<Element> prototypes = new ArrayList<>();
 
-    public ElementFactory{
+    public ElementFactory() {
         prototypes.add(new Circle());
         prototypes.add(new Ellipse());
+        prototypes.add(new Rectangle());
         prototypes.add(new Line());
         prototypes.add(new Polyline());
-        prototypes.add(new Rectangle());
+        prototypes.add(new Path());
+    }
+
+    public List<Element> prototypes() { return prototypes; }
+
+    public Element makeElement(String expr) {
+        for (Element prototype : prototypes()) {
+            if (expr.contains(prototype.label())) {
+                Element out = prototype.newInstance();
+                out.load(expr);
+                return out;
+            }
+        }
+        return null;
     }
 
 

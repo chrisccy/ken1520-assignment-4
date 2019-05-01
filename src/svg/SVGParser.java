@@ -89,12 +89,14 @@ public class SVGParser
 				if (to == -1)
 				{
 					System.out.println("* Failed to close expression: " + content.substring(pos));
+
 				break;
 				}
 
 				final String expr = content.substring(pos, to+1);
 				final Element element = BaseElement.elementFactory().makeElement(label);
 				element.load(expr);
+
 			((BaseElement)element).setFilePos(pos);
 				svg.elements().add(element);
 

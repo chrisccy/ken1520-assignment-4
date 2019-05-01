@@ -7,11 +7,11 @@ public class Line extends Shape{
 
 
     double x1,y1,x2,y2;
-    String label = "rect";
+    String label = "line";
 
     public Line()
     {
-        super("Line");
+        super("line");
     }
 
     @Override
