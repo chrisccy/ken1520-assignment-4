@@ -9,9 +9,12 @@ public class Polyline extends Shape {
     List<Point2D> points = new ArrayList<Point2D>();
     double x;
 
-    public Polyline(String label, List<Point2D> points) {
+    public Polyline() {
+        super("polyline");
+    }
+
+    public Polyline(String label) {
         super(label);
-        this.points = points;
     }
 
     @Override
