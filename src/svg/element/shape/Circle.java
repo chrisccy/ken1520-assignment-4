@@ -53,4 +53,7 @@ public class Circle extends Shape {
         Circle newcircle = new Circle();
         return newcircle;
     }
+    public String toString(){
+        return String.format("circle: cx=%.1f, cy=%.1f, r=%.1f", cx, cy, r);
+    }
 }

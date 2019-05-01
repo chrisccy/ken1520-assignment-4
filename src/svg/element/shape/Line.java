@@ -65,4 +65,8 @@ public class Line extends Shape{
         Line newLine = new Line();
         return newLine;
     }
+
+    public String toString(){
+        return String.format("line: x1=%.1f, y1=%.1f, x2=%.1f, y2=%.1f", x1, x2, y1, y2);
+    }
 }

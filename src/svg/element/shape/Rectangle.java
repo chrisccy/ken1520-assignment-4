@@ -77,4 +77,8 @@ public class Rectangle extends Shape{
         return newrectangle;
     }
 
+    public String toString(){
+        return String.format("rect: x=%.1f, y=%.1f, rx=%.1f, ry=%.1f, width=%.1f, height=%.1f", x, y, width, length);
+    }
+
 }

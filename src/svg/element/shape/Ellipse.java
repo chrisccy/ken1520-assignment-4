@@ -60,4 +60,8 @@ public class Ellipse extends Shape{
         return newEllipse;
     }
 
+    public String toString(){
+        return String.format("ellipse: cx=%.1f, cy=%.1f, rx=%.1f, ry=%.1f", cx, cy, rx, ry);
+    }
+
 }
