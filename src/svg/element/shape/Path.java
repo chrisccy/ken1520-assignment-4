@@ -41,7 +41,6 @@ public class Path extends Shape {
                 String opString = match.group();
                 PathOp newOp = PathOp.makeOp(opString);
                 operations.add(newOp);
-                System.out.println(newOp);
             }
             return true;
         }
@@ -50,5 +49,14 @@ public class Path extends Shape {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public String toString() {
+        String out = "";
+        for (PathOp op : operations) {
+            out += op.toString() + " ";
+        }
+        return out;
     }
 }
