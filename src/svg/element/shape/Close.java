@@ -1,4 +1,4 @@
 package svg.element.shape;
 
-public class Close {
+public class Close extends PathOp {
 }
