@@ -14,6 +14,7 @@ public class Ellipse extends Shape{
         this.cy = cy;
         this.rx = rx;
         this.ry = ry;
+        super("ellipse");
     }
 
     @Override
