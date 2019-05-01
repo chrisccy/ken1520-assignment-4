@@ -1,2 +1,4 @@
 # Ignore IntelliJ stuff
 .idea
+
+out
