@@ -1,0 +1,67 @@
+package svg.element.shape;
+import svg.SVGParser;
+import svg.element.Element;
+
+public class Ellipse extends Shape{
+
+    double cx;
+    double cy;
+    double rx;
+    double ry;
+
+    public Ellipse() {
+        super("ellipse");
+    }
+
+    @Override
+    public boolean load(String expr){
+        if(expr.contains(" cx=")){
+            final Double result = SVGParser.extractDouble(expr, " cx=");
+            if(result != null) {
+                cx = result.doubleValue();
+            }
+            else{
+                return false;
+            }
+        }
+        if(expr.contains(" cy")){
+            final Double result = SVGParser.extractDouble(expr, " cy=");
+            if(result != null) {
+                cy = result.doubleValue();
+            }
+            else{
+                return false;
+            }
+        }
+        if(expr.contains(" rx")){
+            final Double result = SVGParser.extractDouble(expr, " rx=");
+            if(result != null) {
+                rx = result.doubleValue();
+            }
+            else{
+                return false;
+            }
+        }
+        if(expr.contains(" ry")) {
+            final Double result = SVGParser.extractDouble(expr, " ry=");
+            if (result != null) {
+                ry = result.doubleValue();
+            }
+            else{
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public Element newInstance(){
+        Ellipse newEllipse = new Ellipse();
+        return newEllipse;
+    }
+
+    public String toString(){
+        return String.format("ellipse: cx=%.1f, cy=%.1f, rx=%.1f, ry=%.1f", cx, cy, rx, ry);
+    }
+
+}
