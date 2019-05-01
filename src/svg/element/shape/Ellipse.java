@@ -8,12 +8,7 @@ public class Ellipse extends Shape{
     double rx;
     double ry;
 
-    public Ellipse(String label, double cx, double cy, double rx, double ry) {
-        super(label);
-        this.cx = cx;
-        this.cy = cy;
-        this.rx = rx;
-        this.ry = ry;
+    public Ellipse() {
         super("ellipse");
     }
 

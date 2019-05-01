@@ -9,10 +9,7 @@ public class Circle extends Shape {
     double r;
 
 
-    public Circle(double cx, double cy, double r){
-        this.cx = cx;
-        this.cy = cy;
-        this.r = r;
+    public Circle(){
         super("circle");
     }
 

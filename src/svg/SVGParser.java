@@ -69,40 +69,38 @@ public class SVGParser
 	 * Load the specified SVG content from the file with the given name.
 	 * @param content
 	 */
-	public void parse(final String content)
-	{	
+	public void parse(final String content) {
 		svg.clear();
 
-//		// Load SVG elements
-//		for (Element prototype : BaseElement.elementFactory().prototypes())
-//		{
-//			// Load all occurrences of this prototype
-//			final String label = prototype.label();
-//			
-//			int pos = 0;
-//			while (pos < content.length())
-//			{
-//				pos = content.indexOf("<"+label, pos);
-//				if (pos == -1)
-//					break;
-//
-//				final int to = content.indexOf(">", pos); 
-//				
-//				if (to == -1)
-//				{
-//					System.out.println("* Failed to close expression: " + content.substring(pos));
-//					break;
-//				}
-//				
-//				final String expr = content.substring(pos, to+1);
-//				final Element element = BaseElement.elementFactory().makeElement(label);
-//				element.load(expr);
-//				((BaseElement)element).setFilePos(pos);
-//				svg.elements().add(element);
-//				
-//				pos = to;
-//			}
-//		}
+		// Load SVG elements
+		for (Element prototype : BaseElement.elementFactory().prototypes()){
+			// Load all occurrences of this prototype
+			final String label = prototype.label();
+
+			int pos = 0;
+			while (pos < content.length())
+			{
+				pos = content.indexOf("<"+label, pos);
+				if (pos == -1)
+					break;
+
+				final int to = content.indexOf(">", pos);
+
+				if (to == -1)
+				{
+					System.out.println("* Failed to close expression: " + content.substring(pos));
+				break;
+				}
+
+				final String expr = content.substring(pos, to+1);
+				final Element element = BaseElement.elementFactory().makeElement(label);
+				element.load(expr);
+			((BaseElement)element).setFilePos(pos);
+				svg.elements().add(element);
+
+				pos = to;
+			}
+		}
 
 		sortElements();
 	}
